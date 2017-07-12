@@ -1,0 +1,33 @@
+{
+  "name": "me",
+  "version": "1.0.0",
+  "description": "me.bobodai.com",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp clean && cross-env BUILD='dev' gulp --gulpfile gulpfile.js",
+    "pro": "gulp clean && cross-env BUILD='pro' gulp",
+    "pro-server": "gulp clean && cross-env BUILD_EVN='pro' gulp build"
+  },
+  "keywords": [
+    "me"
+  ],
+  "author": "bobodai",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "cross-env": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev-append": "^0.1.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "http-proxy-middleware": "^0.17.4"
+  }
+}
