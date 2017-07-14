@@ -88,8 +88,19 @@ gulp.task('html', function () {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('awesome', function() {
+  gulp.src(['./src/font-awesome/fonts/*'])
+    .pipe(gulp.dest('./dist/font-awesome/fonts'));
+  gulp.src(['./src/font-awesome/css/*.min.css'])
+    .pipe(gulp.dest('./dist/font-awesome/css'));
+})
+
+gulp.task('build', ['clean'], function() {
+  return gulp.run(['images', 'html', 'css', 'js', 'awesome']);
+})
+
 gulp.task('server', [
-  'images', 'html', 'css', 'js', 'brSync'], function () {
+  'images', 'html', 'css', 'js', 'awesome', 'brSync'], function () {
     livereload.listen();
     gulp.watch(['./src/images/**/*'], ['images']).on('change', reload);
     gulp.watch(['./src/index.html'], ['html']).on('change', reload);

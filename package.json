@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp clean && cross-env BUILD='dev' gulp --gulpfile gulpfile.js",
     "pro": "gulp clean && cross-env BUILD='pro' gulp",
-    "pro-server": "gulp clean && cross-env BUILD_EVN='pro' gulp build"
+    "dev-server": "gulp clean && cross-env BUILD='dev' gulp build",
+    "pro-server": "gulp clean && cross-env BUILD='pro' gulp build"
   },
   "keywords": [
     "me"

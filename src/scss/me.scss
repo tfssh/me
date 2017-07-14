@@ -1,0 +1,368 @@
+@import "_var";
+
+html, body {
+	font-family: $family;
+	margin: 0;
+	padding: 0;
+	background: #e0e0e0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.contain {
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	@media screen and (min-width: $screen-small) {
+		margin-top : 10px;
+		width: $screen-small-main;
+  }
+	@media screen and (min-width: $screen-middle) {
+		margin-top: 10px;
+		width: $screen-middle-main;
+  }
+	@media screen and (max-width: $screen-small) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/*头部样式*/
+header {
+	background: #333;
+  color: #fff;
+  position: relative;
+	@media screen and (min-width: $screen-small) {
+		padding: 30px 45px;
+    .info {
+    	position: absolute;
+    	margin-bottom: 0;
+    }
+  }
+	@media screen and (min-width: $screen-middle) {
+		//margin: 30px 45px;
+    .info {
+    	position: absolute;
+    	margin-bottom: 0;
+    	//h1, h2 {
+    	//	display: inline-block;
+    	//}
+    }
+  }
+	@media screen and (max-width: $screen-small) {
+    padding: 30px 10px;
+    .info {
+    	position: initial;
+    	margin-bottom: 10px;
+    }
+  }
+  .base {
+  	margin: 0;
+  }
+  .base>li {
+  	list-style-type: none;
+    font-style: normal;
+    line-height: 1.4;
+    font-size: $header-li-font-size;
+    word-break: break-all;
+    position: relative;
+    i {
+    	position: absolute;
+    	left: -25px;
+    	top: 5px;
+    }
+  }
+  .info {    
+    top: 30px;
+    right: 45px;
+    text-align: center;
+  	h1 {
+  		font-size: $header-h1;
+  		margin: 0;
+  	}
+  	h2 {
+  		font-size: $header-h2;
+  		margin: 0;
+  	}
+  	&:before {
+  		position: relative;
+  		content: ' ';
+  		width: 125px;
+  		height: 125px;
+  		background: url(../images/favicon.png)
+  	}
+  }
+}
+
+/*主体样式*/
+.main {
+	padding: 30px 45px;
+	@media screen and (max-width: $screen-small) {
+    padding: 10px 10px;
+  }
+
+  section {
+  	width: 100%;
+  	padding: 0;
+  	margin-bottom: 10px;
+  	.title-wrap {
+  		display: inline-block;
+  		.title {
+  			float: left;
+		    padding: 0;
+		    margin: 0 0 0 10px;
+		    overflow-y: hidden;
+  			.title-ch {
+	  			font-size: 20px;
+			    float: left;
+			    font-weight: bold;
+  			}
+  			.title-en { 
+	  			font-size: 16px;
+			    float: left;
+			    clear: left;
+			    color: $strong-font-color;
+			    font-variant: small-caps;
+			    font-weight: bold;
+  			}
+  		}
+  		&:before {    
+	  		font-family: FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    transform: translate(0, 0);
+		    background-color: #333;
+		    color: white;
+		    border-radius: 100%;
+		    float: left;
+		    width: 32px;
+		    height: 32px;
+		    padding: 6px;
+		    text-align: center;
+		    line-height: 32px;
+		    font-size: 26px;
+		    content: "\f02d";
+  		}
+  	}
+  	.title-wrap-skills {
+  		&:before {
+  			content: "\f0e3"
+  		}
+  	}
+  	.title-wrap-exprience {
+  		&:before {
+  			content: "\f135"
+  		}
+  	}
+  	.timeline-wrap {
+  	  overflow-y: hidden;
+    	margin-top: -29px;
+    	.timeline {
+    	  padding-top: 42px;
+		    padding-left: 26px;
+		    border-left: 4px solid #333;
+		    margin: 0 0 0 22px;
+		    padding-bottom: 14px;
+		    li {
+		    	list-style-type: none;
+		    	/*设置黑线样式*/
+		    	.timeline-title {
+		    	  margin: 0 0 0 -26px;
+				    padding: 3px 10px 3px 26px;
+				    color: white;
+				    background-color: #333;
+				    border-radius: 6px;
+				    font-weight: normal;
+				    font-size: 16px;
+				    line-height: 1.33;
+				    overflow-y: hidden;
+		    	}
+		    	&:before {
+		    	  font-family: FontAwesome;
+				    font-size: inherit;
+				    text-rendering: auto;
+				    -webkit-font-smoothing: antialiased;
+				    -moz-osx-font-smoothing: grayscale;
+				    transform: translate(0, 0);
+				    background-color: $strong-font-color;
+				    color: white;
+				    border-radius: 100%;
+				    float: left;
+				    width: 26px;
+				    height: 26px;
+				    padding: 6px;
+				    text-align: center;
+				    line-height: 26px;
+				    font-size: 20px;
+				    content: "\f024";
+				    margin-left: -47px;
+				    margin-top: -6px;
+				    position: absolute;
+		    	}
+
+		    	/*各个模块的子样式*/
+		    	.education-name, .education-eng {
+		    	  font-size: 22px;
+				    font-weight: bold;
+				    margin: 10px 0 5px 0;
+		    	}
+		    	.education-major, .skills-items, .exprience-items, .star-items {
+		    		&:before {
+		    	    font-family: FontAwesome;
+					    font-size: inherit;
+					    text-rendering: auto;
+					    -webkit-font-smoothing: antialiased;
+					    -moz-osx-font-smoothing: grayscale;
+					    transform: translate(0, 0);
+					    content: "\f19d";
+					    width: 28px;
+					    margin-left: -28px;
+					    display: inline-block;
+		    		}
+		    	}
+		    	.education-score {
+		    		border-radius: 5px;
+		    		background: #333;
+		    		height: 22px;
+		    		.education-score-real {
+		    			background: $strong-font-color;
+		    			width: 65%;
+		    			height: 100%;
+		    			float: left;
+		    			border-radius: 5px;
+		    		}
+		    		.education-score-num {
+		    			text-align: center;
+		    			color: #fff;
+		    			line-height: 22px;
+		    		}
+		    	}
+		    	.skills-summary, .exprience-summary {
+		    		font-size: 18px;
+				    font-weight: bold;
+				    margin: 10px 0 5px 0;
+		    	}
+		    	.skills-items {
+		    		&:before {
+		    			content: "\f241";
+		    		}
+		    	}
+		    	.star-items {
+		    		&:before {
+		    			content: "\f005";
+		    		}
+		    	}
+		    	.exprience-items {
+		    		&:before {
+		    			content: "\f241";
+		    		}
+		    	}
+		    	.skills-good {
+		    		&:before {
+		    			content: "\f242";
+		    		}
+		    	}
+		    	strong {
+				    font-weight: bold;
+				    color: $strong-font-color;
+		    	}
+		    }
+		    .work-web {
+		    	&:before {
+		    		content: "\f0ae";
+		    	}
+		    }
+		    a {
+		    	text-decoration: none;
+		    	color: $strong-font-color;
+		    	font-weight: bold;
+		    }
+    	}
+    	.work-time {
+    		float: right;
+    	}
+    	.work-position {
+    		margin-left: 10px;
+    	}
+    	&:after {
+    		font-family: FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    transform: translate(0, 0);
+		    background-color: #333;
+		    color: white;
+		    border-radius: 100%;
+		    float: left;
+		    width: 14px;
+		    height: 14px;
+		    padding: 0;
+		    text-align: center;
+		    line-height: 14px;
+		    font-size: 14px;
+		    content: "";
+		    margin-left: 17px;
+		    margin-top: -7px;
+    	}
+  	}
+  }
+}
+
+footer {
+	text-align: center;
+  margin: 30px 60px;
+  a {
+  	text-decoration: none;
+  	color: $strong-font-color;
+  	&:visited, &:hover, &:active, &:focus {
+  		color: $strong-font-color;
+  	}
+  }
+}
+
+/*侧边栏样式*/
+aside {
+  right: 0;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #fff;
+  li {
+  	list-style-type: none;
+    margin-top: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    a {
+    	padding: 10px;
+    	display: inline-block;
+    	text-decoration: none;
+
+    	&:visited, &:hover, &:active, &:focus {
+    		color: #fff;
+    	}
+    }
+  }
+  li:hover {
+  	background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  @media screen and (max-width: $screen-small) {
+    display: table;
+    right: auto;
+    top: 0;
+    transform: none;
+    overflow-y: hidden;
+    zoom: 1;
+    ul {
+    	padding: 0;
+    }
+  }
+}
